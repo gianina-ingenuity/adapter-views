@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/hello" />
             <option value="$PROJECT_DIR$/layouts" />
+            <option value="$PROJECT_DIR$/multiscreens" />
           </set>
         </option>
       </GradleProjectSettings>
