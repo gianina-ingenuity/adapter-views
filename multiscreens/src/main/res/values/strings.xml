@@ -1,3 +1,15 @@
 <resources>
     <string name="app__name">MultiScreens</string>
+    
+    <string name="welcome__message">Hi!</string>
+    <string name="welcome__ctulhu">Show: Call of Ctulhu</string>
+    <string name="welcome__timemachine">Show: The TimeMachine</string>
+    
+    <string name="message__message">Dafuq you doing in this screen</string>
+    
+    <string name="info__title">Title</string>
+    <string name="info__author">Author</string>
+    <string name="info__pagecount">Page Count</string>
+    <string name="info__publishyear">Publish Year</string>
+    <string name="info__chapters">Chapters:</string>
 </resources>

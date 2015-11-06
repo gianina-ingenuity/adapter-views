@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <TextView
+        android:id="@+id/title__label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="8dp"
+        android:text="@string/info__title"
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title__label"
+        android:layout_marginBottom="8dp"/>
+    
+    <TextView
+        android:id="@+id/author__label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginBottom="8dp"
+        android:text="@string/info__author"
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/author__label"
+        android:layout_marginBottom="8dp"/>
+    
+    <TextView
+        android:id="@+id/pagecount__label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/author"
+        android:layout_marginBottom="8dp"
+        android:text="@string/info__pagecount"
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/pagecount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pagecount__label"
+        android:layout_marginBottom="8dp"/>
+    
+    <TextView
+        android:id="@+id/publishyear__label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pagecount"
+        android:layout_marginBottom="8dp"
+        android:text="@string/info__publishyear"
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/publishyear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/publishyear__label"
+        android:layout_marginBottom="8dp"/>
+    
+    <TextView
+        android:id="@+id/chapters__label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/publishyear"
+        android:layout_marginBottom="8dp"
+        android:text="@string/info__chapters"/>
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/chapters__label">
+        
+        <LinearLayout
+            android:id="@+id/chapters__holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
+    </ScrollView>
+</RelativeLayout>
