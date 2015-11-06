@@ -12,4 +12,6 @@
     <string name="info__pagecount">Page Count</string>
     <string name="info__publishyear">Publish Year</string>
     <string name="info__chapters">Chapters:</string>
+    
+    <string name="share__message">You should be sharing stuff right now</string>
 </resources>
