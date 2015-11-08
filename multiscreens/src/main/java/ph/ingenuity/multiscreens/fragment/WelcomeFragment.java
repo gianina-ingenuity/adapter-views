@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ph.ingenuity.multiscreens.R;
 import ph.ingenuity.multiscreens.activity.InformationActivity;
 import ph.ingenuity.multiscreens.activity.MessageActivity;
@@ -20,6 +23,14 @@ import ph.ingenuity.multiscreens.model.Book;
  * @since 11/6/15
  */
 public class WelcomeFragment extends Fragment {
+    protected List<WelcomeFragment.Listener> listeners;
+    
+    public WelcomeFragment() {
+        super();
+        
+        this.listeners = new ArrayList<>();
+    }
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment__welcome, container, false);
@@ -27,6 +38,10 @@ public class WelcomeFragment extends Fragment {
         this.bootstrapHandlers(root);
         
         return root;
+    }
+    
+    public void addListener(WelcomeFragment.Listener listener) {
+        this.listeners.add(listener);
     }
     
     protected void bootstrapHandlers(View root) {
@@ -43,18 +58,14 @@ public class WelcomeFragment extends Fragment {
         button.setOnClickListener(listener);
     }
     
-    protected void transitionToMessage() {
-        this.getActivity().startActivity(new Intent(
-            this.getActivity(),
-            MessageActivity.class
-        ));
+    protected void sendMessage() {
+        for (WelcomeFragment.Listener listener : this.listeners)
+            listener.onMessageSelected();
     }
     
-    protected void transitionToInformation(Book book) {
-        this.getActivity().startActivity(
-            new Intent(this.getActivity(), InformationActivity.class)
-                .putExtra("book", book)
-        );
+    protected void sendBook(Book book) {
+        for (WelcomeFragment.Listener listener : this.listeners)
+            listener.onBookSelected(book);
     }
     
     
@@ -71,7 +82,7 @@ public class WelcomeFragment extends Fragment {
             
             switch (view.getId()) {
                 case R.id.message:
-                    self.transitionToMessage();
+                    self.sendMessage();
                     break;
                 
                 case R.id.ctulhu:
@@ -85,7 +96,7 @@ public class WelcomeFragment extends Fragment {
                     book.chapters.add("The Tale of Inspector Legrasse");
                     book.chapters.add("The Madness from the Sea");
                     
-                    self.transitionToInformation(book);
+                    self.sendBook(book);
                     break;
                 
                 case R.id.timemachine:
@@ -99,9 +110,20 @@ public class WelcomeFragment extends Fragment {
                     book.chapters.add("Chapter II");
                     book.chapters.add("Chapter III");
                     
-                    self.transitionToInformation(book);
+                    self.sendBook(book);
                     break;
             }
         }
+    }
+    
+    
+    /*
+     ***********************************************************************************************
+     * Interfaces
+     ***********************************************************************************************
+     */
+    public interface Listener {
+        void onMessageSelected();
+        void onBookSelected(Book book);
     }
 }

@@ -28,6 +28,16 @@ public class InformationFragment extends Fragment {
         return root;
     }
     
+    public void refresh(Book book) {
+        View root = this.getView();
+        LinearLayout chaptersHolder;
+        
+        chaptersHolder = (LinearLayout)root.findViewById(R.id.chapters__holder);
+        chaptersHolder.removeAllViews();
+        
+        this.renderBook(root, book);
+    }
+    
     protected void renderBook(View root, Book book) {
         LinearLayout chaptersHolder = (LinearLayout)root.findViewById(R.id.chapters__holder);
         
