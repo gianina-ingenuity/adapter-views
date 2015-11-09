@@ -1,0 +1,10 @@
+<resources>
+    <string name="app__name">Layouts</string>
+    <string name="launcher__we">We</string>
+    <string name="launcher__are">are</string>
+    <string name="launcher__evenly">evenly</string>
+    <string name="launcher__spaced">spaced</string>
+    
+    <string name="launcher__vertically">vertically</string>
+    <string name="launcher__laidout">laid out</string>
+</resources>

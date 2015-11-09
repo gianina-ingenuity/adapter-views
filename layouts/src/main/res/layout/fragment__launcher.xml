@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/launcher__we"
+            android:background="#ff0000"/>
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/launcher__are"
+            android:background="#00ff00"/>
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/launcher__evenly"
+            android:background="#0000ff"/>
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="@string/launcher__spaced"
+            android:background="#4e923a"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/launcher__vertically"/>
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/launcher__laidout"/>
+        
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+        <View
+            android:id="@+id/nw"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:background="#ff0000"/>
+        
+        <View
+            android:id="@+id/ne"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="#ff0000"/>
+        
+        <View
+            android:id="@+id/nm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@id/nw"
+            android:layout_toLeftOf="@id/ne"
+            android:layout_toRightOf="@id/nw"
+            android:background="#00ff00"/>
+    
+        <View
+            android:id="@+id/sw"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="#0000ff"/>
+    
+        <View
+            android:id="@+id/se"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#0000ff"/>
+    
+        <View
+            android:id="@+id/sm"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignTop="@id/sw"
+            android:layout_toLeftOf="@id/se"
+            android:layout_toRightOf="@id/sw"
+            android:background="#00ff00"/>
+        
+        <View
+            android:id="@+id/cm"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerInParent="true"
+            android:background="#ff00ff"/>
+        
+        <View
+            android:id="@+id/cmw"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:layout_above="@id/sm"
+            android:layout_below="@id/nm"
+            android:layout_alignLeft="@id/nm"
+            android:background="#ffff00"/>
+    
+        <View
+            android:id="@+id/cme"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            android:layout_above="@id/sm"
+            android:layout_below="@id/nm"
+            android:layout_alignRight="@id/nm"
+            android:background="#ffff00"/>
+        
+        <View
+            android:id="@+id/bridge__l"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_toLeftOf="@id/cm"
+            android:layout_toRightOf="@id/cmw"
+            android:layout_alignTop="@id/cm"
+            android:layout_alignBottom="@id/cm"
+            android:background="#00ffff"/>
+    
+        <View
+            android:id="@+id/bridge__r"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_toLeftOf="@id/cme"
+            android:layout_toRightOf="@id/cm"
+            android:layout_alignTop="@id/cm"
+            android:layout_alignBottom="@id/cm"
+            android:background="#00ffff"/>
+    </RelativeLayout>
+</LinearLayout>
