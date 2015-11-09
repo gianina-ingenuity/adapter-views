@@ -19,36 +19,36 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
             android:layout_gravity="center_vertical"
-            android:gravity="center"
             android:text="@string/launcher__we"
-            android:background="#ff0000"/>
+            android:background="@color/red"
+            style="@style/Text.Centered.White"/>
         
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:layout_gravity="center_vertical"
-            android:gravity="center"
             android:text="@string/launcher__are"
-            android:background="#00ff00"/>
+            android:background="@color/green"
+            style="@style/Text.Centered.White"/>
         
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:layout_gravity="center_vertical"
-            android:gravity="center"
             android:text="@string/launcher__evenly"
-            android:background="#0000ff"/>
+            android:background="@color/blue"
+            style="@style/Text.Centered.White"/>
         
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
             android:layout_gravity="center_vertical"
-            android:gravity="center"
             android:text="@string/launcher__spaced"
-            android:background="#4e923a"/>
+            android:background="#4e923a"
+            style="@style/Text.Centered.White"/>
     </LinearLayout>
     
     <LinearLayout
@@ -62,14 +62,16 @@
             android:layout_height="0dp"
             android:layout_weight="0.25"
             android:layout_gravity="center_horizontal"
-            android:text="@string/launcher__vertically"/>
+            android:text="@string/launcher__vertically"
+            style="@style/Text.Centered.Big"/>
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="0.25"
             android:layout_gravity="center_horizontal"
-            android:text="@string/launcher__laidout"/>
+            android:text="@string/launcher__laidout"
+            style="@style/Text.Centered.Big"/>
         
     </LinearLayout>
     
@@ -84,7 +86,7 @@
             android:layout_height="36dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:background="#ff0000"/>
+            android:background="@color/red"/>
         
         <View
             android:id="@+id/ne"
@@ -92,7 +94,7 @@
             android:layout_height="36dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:background="#ff0000"/>
+            android:background="@color/red"/>
         
         <View
             android:id="@+id/nm"
@@ -102,7 +104,7 @@
             android:layout_alignBottom="@id/nw"
             android:layout_toLeftOf="@id/ne"
             android:layout_toRightOf="@id/nw"
-            android:background="#00ff00"/>
+            android:background="@color/green"/>
     
         <View
             android:id="@+id/sw"
@@ -110,7 +112,7 @@
             android:layout_height="36dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:background="#0000ff"/>
+            android:background="@color/blue"/>
     
         <View
             android:id="@+id/se"
@@ -118,7 +120,7 @@
             android:layout_height="36dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:background="#0000ff"/>
+            android:background="@color/blue"/>
     
         <View
             android:id="@+id/sm"
@@ -128,14 +130,14 @@
             android:layout_alignTop="@id/sw"
             android:layout_toLeftOf="@id/se"
             android:layout_toRightOf="@id/sw"
-            android:background="#00ff00"/>
+            android:background="@color/green"/>
         
         <View
             android:id="@+id/cm"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_centerInParent="true"
-            android:background="#ff00ff"/>
+            android:background="@color/purple"/>
         
         <View
             android:id="@+id/cmw"
@@ -144,7 +146,7 @@
             android:layout_above="@id/sm"
             android:layout_below="@id/nm"
             android:layout_alignLeft="@id/nm"
-            android:background="#ffff00"/>
+            android:background="@color/yellow"/>
     
         <View
             android:id="@+id/cme"
@@ -153,7 +155,7 @@
             android:layout_above="@id/sm"
             android:layout_below="@id/nm"
             android:layout_alignRight="@id/nm"
-            android:background="#ffff00"/>
+            android:background="@color/yellow"/>
         
         <View
             android:id="@+id/bridge__l"
@@ -163,7 +165,7 @@
             android:layout_toRightOf="@id/cmw"
             android:layout_alignTop="@id/cm"
             android:layout_alignBottom="@id/cm"
-            android:background="#00ffff"/>
+            android:background="@color/teal"/>
     
         <View
             android:id="@+id/bridge__r"
@@ -173,6 +175,6 @@
             android:layout_toRightOf="@id/cm"
             android:layout_alignTop="@id/cm"
             android:layout_alignBottom="@id/cm"
-            android:background="#00ffff"/>
+            android:background="@color/teal"/>
     </RelativeLayout>
 </LinearLayout>

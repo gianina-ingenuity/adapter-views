@@ -7,5 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    
+    <style name="Text"/>
+    <style name="Text.Centered">
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="Text.Centered.White">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="Text.Centered.Big">
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
