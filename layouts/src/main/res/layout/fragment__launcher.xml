@@ -47,7 +47,7 @@
             android:layout_weight="0.25"
             android:layout_gravity="center_vertical"
             android:text="@string/launcher__spaced"
-            android:background="#4e923a"
+            android:background="@color/phlegm"
             style="@style/Text.Centered.White"/>
     </LinearLayout>
     
@@ -60,16 +60,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.25"
-            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.5"
             android:text="@string/launcher__vertically"
             style="@style/Text.Centered.Big"/>
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.25"
-            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.5"
             android:text="@string/launcher__laidout"
             style="@style/Text.Centered.Big"/>
         
