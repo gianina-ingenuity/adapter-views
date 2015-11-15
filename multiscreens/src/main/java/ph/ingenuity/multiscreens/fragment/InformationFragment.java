@@ -20,32 +20,32 @@ import ph.ingenuity.multiscreens.model.Book;
 public class InformationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Bundle arguments = this.getArguments();
         View root = inflater.inflate(R.layout.fragment__info, container, false);
+        Book book;
         
-        this.renderBook(root, (Book)arguments.getParcelable("book"));
+        if (this.getArguments() != null) {
+            book = this.getArguments().getParcelable("book");
+            this.renderBook(root, book);
+        }
         
         return root;
     }
     
-    public void refresh(Book book) {
-        View root = this.getView();
-        LinearLayout chaptersHolder;
-        
-        chaptersHolder = (LinearLayout)root.findViewById(R.id.chapters__holder);
-        chaptersHolder.removeAllViews();
-        
-        this.renderBook(root, book);
+    public void render(Book book) {
+        this.renderBook(this.getView(), book);
     }
     
     protected void renderBook(View root, Book book) {
-        LinearLayout chaptersHolder = (LinearLayout)root.findViewById(R.id.chapters__holder);
-        
+        LinearLayout chaptersHolder;
+
         ((TextView)root.findViewById(R.id.title)).setText(book.title);
         ((TextView)root.findViewById(R.id.author)).setText(book.author);
         ((TextView)root.findViewById(R.id.pagecount)).setText(String.valueOf(book.pageCount));
         ((TextView)root.findViewById(R.id.publishyear)).setText(String.valueOf(book.publishYear));
-        
+
+        chaptersHolder = (LinearLayout)root.findViewById(R.id.chapters__holder);
+        chaptersHolder.removeAllViews();
+
         for (String chapter : book.chapters)
             chaptersHolder.addView(this.renderChapter(chaptersHolder, chapter));
     }

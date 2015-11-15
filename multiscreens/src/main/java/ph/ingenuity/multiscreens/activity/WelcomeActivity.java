@@ -56,17 +56,16 @@ public class WelcomeActivity extends AppCompatActivity {
                     .putExtra("book", book)
             );
         else {
-            
             if (this.bookFragment == null) {
                 Bundle arguments;
-
+                
                 arguments = new Bundle();
                 arguments.putParcelable("book", book);
                 
+                this.messageFragment = null;
+                
                 this.bookFragment = new InformationFragment();
                 this.bookFragment.setArguments(arguments);
-
-                this.messageFragment = null;
 
                 this.getSupportFragmentManager()
                     .beginTransaction()
@@ -74,7 +73,7 @@ public class WelcomeActivity extends AppCompatActivity {
                     .commit();
             }
             else
-                this.bookFragment.refresh(book);
+                this.bookFragment.render(book);
         }
     }
     
