@@ -56,36 +56,55 @@ public class ListViewAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup container) {
         Context context = container.getContext();
         Resources res = context.getResources();
-        View root = LayoutInflater.from(context).inflate(
-            R.layout.adapter__list__car,
-            container,
-            false
-        );
-        TextView label;
+        
+        ViewHolder holder;
+        
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(
+                R.layout.adapter__list__car,
+                container,
+                false
+            );
+            
+            holder = new ViewHolder();
+            holder.model = (TextView)view.findViewById(R.id.model);
+            holder.brand = (TextView)view.findViewById(R.id.brand);
+            holder.weight = (TextView)view.findViewById(R.id.weight);
+            holder.horsepower = (TextView)view.findViewById(R.id.horsepower);
+            holder.price = (TextView)view.findViewById(R.id.price);
+            
+            view.setTag(holder);
+        }
+        else
+            holder = (ViewHolder)view.getTag();
         
         Car car = this.getItem(position);
         
-        label = (TextView)root.findViewById(R.id.model);
-        label.setText(car.model);
-        
-        label = (TextView)root.findViewById(R.id.brand);
-        label.setText(car.brand);
-        
-        label = (TextView)root.findViewById(R.id.weight);
-        label.setText(res.getString(
+        holder.model.setText(car.model);
+        holder.brand.setText(car.brand);
+        holder.weight.setText(res.getString(
             R.string.car__weight,
             String.format("%.2f", (float)car.grams / 2.0)
         ));
-        
-        label = (TextView)root.findViewById(R.id.horsepower);
-        label.setText(res.getString(
+        holder.horsepower.setText(res.getString(
             R.string.car__power,
             car.horsepower
         ));
+        holder.price.setText(String.format("%.2f", (float)car.price));
         
-        label = (TextView)root.findViewById(R.id.price);
-        label.setText(String.format("%.2f", (float)car.price));
+        return view;
+    }
 
-        return root;
+    /*
+     ***********************************************************************************************
+     * Inner Classes
+     *********************************************************************************************** 
+     */
+    protected static class ViewHolder {
+        public TextView model;
+        public TextView brand;
+        public TextView price;
+        public TextView weight;
+        public TextView horsepower;
     }
 }
