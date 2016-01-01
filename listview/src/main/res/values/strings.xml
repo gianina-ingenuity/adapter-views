@@ -3,4 +3,7 @@
     
     <string name="car__weight">%1$s kgs</string>
     <string name="car__power">%1$s HP</string>
+    
+    <string name="launcher__listview">Show List View</string>
+    <string name="launcher__recyclerview">Show Recycler View</string>
 </resources>
