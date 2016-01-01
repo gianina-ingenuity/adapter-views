@@ -16,6 +16,7 @@ import ph.ingenuity.listview.R;
 import ph.ingenuity.listview.adapter.RecyclerViewAdapter;
 import ph.ingenuity.listview.model.Car;
 import ph.ingenuity.listview.util.AssetUtil;
+import ph.ingenuity.listview.widgets.recycler.SpacingDecoration;
 
 
 /**
@@ -39,6 +40,7 @@ public class RecyclerViewFragment extends Fragment {
         list.setHasFixedSize(true);
         list.setLayoutManager(new LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false));
         list.setAdapter(this.carsAdapter);
+        list.addItemDecoration(new SpacingDecoration(activity, 5, SpacingDecoration.POLICY_INCLUDE_EDGES_ALL));
         
         return root;
     }
