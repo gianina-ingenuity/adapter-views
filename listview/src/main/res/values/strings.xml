@@ -7,5 +7,5 @@
     <string name="launcher__listview">Show List View</string>
     <string name="launcher__recyclerview">Show Recycler View</string>
     
-    <string name="detail__content">You are not viewing:</string>
+    <string name="detail__content">You are now viewing:</string>
 </resources>
