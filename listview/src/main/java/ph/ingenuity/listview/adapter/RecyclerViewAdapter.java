@@ -21,6 +21,7 @@ import ph.ingenuity.listview.model.Car;
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     protected List<Car> cars;
+    protected List<Listener> listeners;
     
     public RecyclerViewAdapter(List<Car> cars) {
         super();
@@ -29,6 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             cars = new ArrayList<>();
         
         this.cars = cars;
+        this.listeners = new ArrayList<>();
     }
     
     @Override
@@ -38,7 +40,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup container, int position) {
-        return new ViewHolder(LayoutInflater.from(container.getContext()).inflate(
+        return new ViewHolder(this, LayoutInflater.from(container.getContext()).inflate(
             R.layout.adapter__recycler__car,
             container,
             false
@@ -62,20 +64,32 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         ));
         holder.price.setText(String.format("%.2f", (float)car.price));
     }
+
+    public void addListener(Listener listener) {
+        this.listeners.add(listener);
+    }
+    
+    protected void fireSelectionEvent(View view) {
+        for (Listener listener : this.listeners)
+            listener.onItemSelected(view);
+    }
     
     /*
      ***********************************************************************************************
      * Inner Classes
      ***********************************************************************************************
      */
-    protected class ViewHolder extends RecyclerView.ViewHolder {
+    protected class ViewHolder extends RecyclerView.ViewHolder
+                               implements View.OnClickListener {
         public TextView model;
         public TextView brand;
         public TextView price;
         public TextView weight;
         public TextView horsepower;
+        
+        protected RecyclerViewAdapter adapter;
 
-        public ViewHolder(View item) {
+        public ViewHolder(RecyclerViewAdapter adapter, View item) {
             super(item);
 
             this.model = (TextView)item.findViewById(R.id.model);
@@ -83,6 +97,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             this.price = (TextView)item.findViewById(R.id.price);
             this.weight = (TextView)item.findViewById(R.id.weight);
             this.horsepower = (TextView)item.findViewById(R.id.horsepower);
+            
+            this.adapter = adapter;
+            
+            item.setOnClickListener(this);
         }
+        
+        @Override
+        public void onClick(View source) {
+            this.adapter.fireSelectionEvent(this.itemView);
+        }
+    }
+    
+    public interface Listener {
+        void onItemSelected(View view);
     }
 }
